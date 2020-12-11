@@ -1,0 +1,128 @@
+USE master
+GO
+
+--CHECK TO SEE IF DATABASE EXISTS AND IF SO, DROP AND RECREATE DATABASE
+IF EXISTS(SELECT name FROM sys.databases
+ WHERE name = 'storemanager')
+DROP DATABASE storemanager
+GO
+CREATE DATABASE [storemanager]
+GO
+
+--SWITCH TO DATABASE
+USE storemanager
+
+--CREATE TABLES
+CREATE TABLE tblState
+(
+StateID char(10) NOT NULL PRIMARY KEY,
+StateName varchar(10) NOT NULL
+)
+CREATE TABLE tblVendor
+(
+VendorID char(10) NOT NULL PRIMARY KEY,
+StateID char(10) NOT NULL FOREIGN KEY REFERENCES tblState(StateID),
+VendorAddress char (35) NOT NULL,
+VendorZipCode char (10) NOT NULL,
+VendorCity char (25) NOT NULL,
+VendorInventory char (10) NOT NULL,
+VendorPhoneNumber char (20) NOT NULL
+)
+CREATE TABLE tblStore
+(
+StoreID char(10) NOT NULL PRIMARY KEY,
+StateID char(10) NOT NULL FOREIGN KEY REFERENCES tblState(StateID),
+StoreName varchar(25) NOT NULL,
+StoreAddress1 char(35),
+StoreCity varchar(20),
+StoreZip char(10)
+)
+
+CREATE TABLE tblDepartment
+(
+DepartmentID char(10) NOT NULL PRIMARY KEY,
+StoreID char(10) FOREIGN KEY REFERENCES tblStore(StoreID),
+DepartmentName varchar(50) NOT NULL
+)
+
+CREATE TABLE tblCustomer
+(
+CustomerID char(10) NOT NULL PRIMARY KEY,
+StateID char(10) NOT NULL,
+FirstName varchar(25) NOT NULL,
+LastName varchar(25) NOT NULL,
+CustomerSurveyEligibility varchar(1) NOT NULL,
+CustomerAddress char(35) NOT NULL,
+CustomerZipCode char (35) NOT NULL,
+CustomerCity char(20)
+)
+CREATE TABLE tblDistributionCenter
+(
+DistributionCenterID char(10) NOT NULL Primary Key,
+StateID char(10) FOREIGN KEY REFERENCES tblState(StateID),
+DistributionCenterAddress char(35),
+DistributionCenterZipCode char(10),
+DistributionCenterCity char(20),
+DistributionCenterInventory char(10) NOT NULL,
+DistributionCenterPhoneNumber char(10) NOT NULL
+)
+CREATE TABLE tblEmployee
+(
+EmployeeID char(10) NOT NULL PRIMARY KEY,
+DepartmentID char(10) FOREIGN KEY REFERENCES tblDepartment(DepartmentID),
+StoreID char(10) FOREIGN KEY REFERENCES tblStore(StoreID),
+EmployeeFirstName char(20) NOT NULL,
+EmployeeLastName char(20) NOT NULL,
+)
+
+CREATE TABLE tblEmployeeLoss
+(
+EmployeeLossID char(10) NOT NULL PRIMARY KEY,
+EmployeeID char(10) NOT NULL FOREIGN KEY REFERENCES tblEmployee(EmployeeID),
+DepartmentID char(10) FOREIGN KEY REFERENCES tblDepartment(DepartmentID),
+StoreID char(10) FOREIGN KEY REFERENCES tblStore(StoreID),
+EmployeeLossAmount char(10) NOT NULL,
+EmployeeLossType char(30) NOT NULL
+)
+
+CREATE TABLE tblEmployeeEarnings
+(
+EmployeeEarningsID char(10) NOT NULL PRIMARY KEY,
+EmployeeID char(10) NOT NULL FOREIGN KEY REFERENCES tblEmployee(EmployeeID),
+DepartmentID char(10) FOREIGN KEY REFERENCES tblDepartment(DepartmentID),
+StoreID char(10) FOREIGN KEY REFERENCES tblStore(StoreID),
+SaleAmount char(10) NOT NULL,
+SaleType char(10) NOT NULL
+)
+
+CREATE TABLE tblProduct
+(
+ProductID char(10) NOT NULL PRIMARY KEY,
+VendorID char(10) NOT NULL FOREIGN KEY REFERENCES tblVendor(VendorID),
+DistributionCenterID char(10) NOT NULL FOREIGN KEY REFERENCES tblDistributionCenter(DistributionCenterID),
+StoreID char(10) NOT NULL FOREIGN KEY REFERENCES tblStore(StoreID),
+DepartmentID char(10) NOT NULL FOREIGN KEY REFERENCES tblDepartment(DepartmentID),
+UPC char(13) NOT NULL,
+SerialNumber char(10) NOT NULL,
+Description char(30) NOT NULL,
+ValueOfItem char(10) NOT NULL,
+Inventory char(10) NOT NULL
+)
+
+CREATE TABLE tblPick_Up_Order
+(
+Pick_Up_OrderID char(10) NOT NULL PRIMARY KEY,
+StoreID char(10) NOT NULL FOREIGN KEY REFERENCES tblStore(StoreID),
+OrderDateTime char(30) NOT NULL,
+PickUpOrderSurveyValue char(2) NOT NULL,
+PickupOrderStore char(30) NOT NULL
+)
+
+CREATE TABLE tblOrderLineItem
+(
+OrderLineItemID char(10) NOT NULL PRIMARY KEY,
+Pick_Up_OrderID char(10) NOT NULL FOREIGN KEY REFERENCES tblPick_Up_Order(Pick_Up_OrderID),
+ProductID char(10) NOT NULL FOREIGN KEY REFERENCES tblProduct(ProductID),
+Quantity char(10) NOT NULL
+)
+
