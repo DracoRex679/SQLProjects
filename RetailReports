@@ -1,0 +1,58 @@
+USE storemanager
+GO
+--update store city in tblstores based on StoreID
+UPDATE tblStore
+SET StoreCity = 'Kansas City'
+WHERE StoreID = '10200'
+
+SELECT SaleAmount
+FROM tblEmployeeEarnings
+GROUP BY SaleAmount
+
+SELECT SaleAmount
+FROM tblEmployeeEarnings
+GROUP BY SaleAmount
+
+SELECT EmployeeLossAmount
+FROM tblEmployeeLoss
+GROUP BY EmployeeLossAmount
+
+SELECT EmployeeLossAmount
+FROM tblEmployeeLoss
+GROUP BY EmployeeLossAmount
+
+SELECT Month,
+ProductID,
+sum(SaleAmount) as Total_Revenue
+FROM tblEmployeeEarnings
+GROUP BY ProductID, Month
+
+SELECT Month,
+CustomerID,
+sum(SaleAmount) as Total_Revenue
+FROM tblEmployeeEarnings
+GROUP BY CustomerID, Month
+
+SELECT sum(Inventory)
+FROM tblProduct
+GROUP BY Inventory, DepartmentID
+--To delete a parent record in which there is one or more related child records, the child records
+--must be deleted first before the parent
+
+--delete department associated with store that needs to be deleted from tblstores based on StoreID
+BEGIN TRAN
+DELETE  FROM tblOrderLineItem
+where ProductID = '200006'
+COMMIT TRAN;
+
+--delete store from tblstores based on StoreID (USING A TRANSACTION WITH ERROR HANDLER)
+--LEFT IN THE FOLLOWING TO SHOW HOW ERROR MESSAGES WORK IN SQL (STUDENT NOTE)
+BEGIN TRAN
+DELETE  FROM tblPick_Up_Order
+where StoreID = '10200'
+
+    IF (@@ERROR <> 0) BEGIN
+        PRINT 'Unexpected error occurred!'
+        ROLLBACK TRAN  
+    END
+COMMIT TRAN
