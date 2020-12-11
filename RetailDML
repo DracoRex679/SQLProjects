@@ -1,0 +1,495 @@
+--SWITCH TO DATABASE
+USE storemanager
+
+--INSERT RECORDS IN THE CORRECT ORDER, BASED ON DEPENDENCIES (PARENT BEFORE CHILD)
+INSERT INTO tblState
+VALUES ('10000', 'CO')
+INSERT INTO tblState
+VALUES ('10001', 'CA')
+INSERT INTO tblState
+VALUES ('10002', 'MN')
+INSERT INTO tblState
+VALUES ('10003', 'OK')
+INSERT INTO tblState
+VALUES ('10004', 'TX')
+INSERT INTO tblState
+VALUES ('10005', 'NE')
+INSERT INTO tblState
+VALUES ('10006', 'NM')
+INSERT INTO tblState
+VALUES ('10007', 'AZ')
+INSERT INTO tblState
+VALUES ('10008', 'TN')
+INSERT INTO tblState
+VALUES ('10009', 'MA')
+INSERT INTO tblState
+VALUES ('10010', 'AL')
+INSERT INTO tblState
+VALUES ('10011', 'AK')
+INSERT INTO tblState
+VALUES ('10012', 'AR')
+INSERT INTO tblState
+VALUES ('10013', 'CT')
+INSERT INTO tblState
+VALUES ('10014', 'DE')
+INSERT INTO tblState
+VALUES ('10015', 'FL')
+INSERT INTO tblState
+VALUES ('10016', 'GA')
+INSERT INTO tblState
+VALUES ('10017', 'HI')
+INSERT INTO tblState
+VALUES ('10018', 'ID')
+INSERT INTO tblState
+VALUES ('10019', 'IL')
+
+INSERT INTO tblVendor
+VALUES ('10100', '10000', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10101', '10001', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10102', '10002', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10103', '10003', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10104', '10004', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10105', '10005', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10106', '10006', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10107', '10007', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10108', '10008', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10109', '10009', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10110', '10010', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10111', '10011', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10112', '10012', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10113', '10013', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10114', '10014', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10115', '10015', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10116', '10016', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10117', '10017', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10118', '10018', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+INSERT INTO tblVendor
+VALUES ('10119', '10019', '396 Elmira St', '80012', 'Denver', '1000', '3038078995')
+
+INSERT INTO tblStore
+VALUES ('10200', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80015')
+INSERT INTO tblStore
+VALUES ('10201', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80016')
+INSERT INTO tblStore
+VALUES ('10202', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80017')
+INSERT INTO tblStore
+VALUES ('10203', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80018')
+INSERT INTO tblStore
+VALUES ('10204', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80019')
+INSERT INTO tblStore
+VALUES ('10205', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80020')
+INSERT INTO tblStore
+VALUES ('10206', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80021')
+INSERT INTO tblStore
+VALUES ('10207', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80022')
+INSERT INTO tblStore
+VALUES ('10208', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80023')
+INSERT INTO tblStore
+VALUES ('10209', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80024')
+INSERT INTO tblStore
+VALUES ('10210', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80025')
+INSERT INTO tblStore
+VALUES ('10211', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80026')
+INSERT INTO tblStore
+VALUES ('10212', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80027')
+INSERT INTO tblStore
+VALUES ('10213', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80028')
+INSERT INTO tblStore
+VALUES ('10214', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80029')
+INSERT INTO tblStore
+VALUES ('10215', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80030')
+INSERT INTO tblStore
+VALUES ('10216', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80031')
+INSERT INTO tblStore
+VALUES ('10217', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80032')
+INSERT INTO tblStore
+VALUES ('10218', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80033')
+INSERT INTO tblStore
+VALUES ('10219', '10000', 'CO Denver Store', '398 Havana St', 'Denver', '80034')
+
+INSERT INTO tblDepartment
+VALUES ('11000', '10200', 'DepartmentAppliances')
+INSERT INTO tblDepartment
+VALUES ('11001', '10200', 'DepartmentChargers')
+INSERT INTO tblDepartment
+VALUES ('11002', '10200', 'DepartmentAccessories')
+INSERT INTO tblDepartment
+VALUES ('11003', '10200', 'DepartmentComputers')
+INSERT INTO tblDepartment
+VALUES ('11004', '10200', 'DepartmentPhones')
+INSERT INTO tblDepartment
+VALUES ('11005', '10200', 'DepartmentPhoneAccessories')
+INSERT INTO tblDepartment
+VALUES ('11006', '10200', 'DepartmentCDs')
+INSERT INTO tblDepartment
+VALUES ('11007', '10200', 'DepartmentDVDs')
+INSERT INTO tblDepartment
+VALUES ('11008', '10200', 'DepartmentMusic')
+INSERT INTO tblDepartment
+VALUES ('11009', '10200', 'DepartmentCDPlayers')
+INSERT INTO tblDepartment
+VALUES ('11010', '10200', 'DepartmentDVDPlayers')
+INSERT INTO tblDepartment
+VALUES ('11011', '10200', 'DepartmentVideoGames')
+INSERT INTO tblDepartment
+VALUES ('11012', '10200', 'DepartmentPlaystation')
+INSERT INTO tblDepartment
+VALUES ('11013', '10200', 'DepartmentXbox')
+INSERT INTO tblDepartment
+VALUES ('11014', '10200', 'DepartmentWii')
+INSERT INTO tblDepartment
+VALUES ('11015', '10200', 'DepartmentWiiU')
+INSERT INTO tblDepartment
+VALUES ('11016', '10200', 'DepartmentNintendoSwitch')
+INSERT INTO tblDepartment
+VALUES ('11017', '10200', 'DepartmentNintendoDS')
+INSERT INTO tblDepartment
+VALUES ('11018', '10200', 'DepartmentAntiVirus')
+INSERT INTO tblDepartment
+VALUES ('11019', '10200', 'DepartmentTVs')
+
+INSERT INTO tblCustomer
+VALUES ('11100', '10000', 'Mark', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11101', '10000', 'Mark', 'Zuckerberg', 'N', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11102', '10000', 'Mark', 'Zuckerberg', 'Y', '3891 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11103', '10000', 'Mark', 'Buckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11104', '10000', 'Lark', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11105', '10000', 'Lark', 'Buckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11106', '10000', 'Bark', 'Luckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11107', '10000', 'Mal', 'Zuckerberg', 'Y', '389 Eldermen St', '900013', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11108', '10000', 'Mark', 'Zuckerberg', 'Y', '389 Eldermen St', '900014', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11109', '10000', 'Mark', 'Zuckerberg', 'Y', '390 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11110', '10000', 'Mark', 'Zuckerberg', 'Y', '391 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11111', '10000', 'Karen', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11112', '10000', 'Aaron', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11113', '10000', 'Mark', 'Zuckerburg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11114', '10000', 'Mark', 'Zuckerburgh', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11115', '10000', 'Mark', 'Malberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11116', '10000', 'Zark', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11117', '10000', 'Lark', 'Luckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11118', '10000', 'Clark', 'Zumberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+INSERT INTO tblCustomer
+VALUES ('11119', '10000', 'Bill', 'Zuckerberg', 'Y', '389 Eldermen St', '900012', 'Lowry')
+
+INSERT INTO tblDistributionCenter
+VALUES ('20000', '10000', '802 Malboro St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20001', '10000', '803 Malboro St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20002', '10000', '802 Malboros St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20003', '10000', '802 Malboro St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20004', '10000', '802 Malboro Ave', '70013', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20005', '10000', '802 Malboro St', '70014', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20006', '10000', '802 Malboro St', '70012', 'Grand Function', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20007', '10000', '802 Malboro St', '70012', 'Brand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20008', '10000', '802 Malboro St', '70012', 'Grand Junction', '1051', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20009', '10000', '802 Malboro St', '70012', 'Grand Junction', '1050', '3039876713')
+INSERT INTO tblDistributionCenter
+VALUES ('20010', '10000', '802 Malboro St', '70012', 'Grand Junction', '1060', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20011', '10000', '802 Malboro St', '70012', 'Grand Junction', '1150', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20012', '10000', '802 Malboro St', '70012', 'Grand Junction', '2050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20013', '10000', '802 Malboro St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20014', '10000', '8035 Malboro St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20015', '10000', '802 Malbor St', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20016', '10000', '802 Malboro Ave', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20017', '10000', '802 Malboro Blvd', '70012', 'Grand Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20018', '10000', '802 Malboro St', '70012', 'Grass Junction', '1050', '3039876712')
+INSERT INTO tblDistributionCenter
+VALUES ('20019', '10000', '802 Malboro St', '70012', 'Grand Junction', '1056', '3039876712')
+
+INSERT INTO tblEmployee
+VALUES ('22000', '11000', '10200', 'Cal', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22001', '11000', '10200', 'Cal', 'Bestis')
+INSERT INTO tblEmployee
+VALUES ('22002', '11000', '10200', 'Cal', 'Zestis')
+INSERT INTO tblEmployee
+VALUES ('22003', '11000', '10200', 'Cal', 'Lestis')
+INSERT INTO tblEmployee
+VALUES ('22004', '11000', '10200', 'Cal', 'Restis')
+INSERT INTO tblEmployee
+VALUES ('22005', '11000', '10200', 'Cal', 'Valestis')
+INSERT INTO tblEmployee
+VALUES ('22006', '11000', '10200', 'Cale', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22007', '11000', '10200', 'Caleb', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22008', '11000', '10200', 'Cali', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22009', '11000', '10200', 'Caley', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22010', '11000', '10200', 'Calebs', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22011', '11000', '10200', 'Cable', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22012', '11000', '10201', 'Cal', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22013', '11000', '10202', 'Cale', 'Calestis')
+INSERT INTO tblEmployee
+VALUES ('22014', '11000', '10203', 'Kyle', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22015', '11000', '10205', 'Cal', 'Constance')
+INSERT INTO tblEmployee
+VALUES ('22016', '11000', '10206', 'Cale', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22017', '11000', '10206', 'Cable', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22018', '11000', '10206', 'Calep', 'Kestis')
+INSERT INTO tblEmployee
+VALUES ('22019', '11000', '10208', 'Cales', 'Kestis')
+
+INSERT INTO tblEmployeeLoss
+VALUES ('30000', '22000', '11000', '10200', '-10', 'Shrink')
+INSERT INTO tblEmployeeLoss
+VALUES ('30001', '22000', '11000', '10200', '-10', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30002', '22000', '11000', '10200', '-10', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30003', '22000', '11000', '10200', '-5', 'Shrink')
+INSERT INTO tblEmployeeLoss
+VALUES ('30004', '22000', '11000', '10200', '-5', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30005', '22000', '11000', '10200', '-5', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30006', '22000', '11000', '10200', '-50', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30007', '22000', '11000', '10200', '-50', 'Shrink')
+INSERT INTO tblEmployeeLoss
+VALUES ('30008', '22000', '11000', '10200', '-50', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30009', '22000', '11000', '10201', '-10', 'Shrink')
+INSERT INTO tblEmployeeLoss
+VALUES ('30010', '22000', '11000', '10201', '-10', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30011', '22000', '11000', '10201', '-20', 'Shrink')
+INSERT INTO tblEmployeeLoss
+VALUES ('30012', '22000', '11000', '10201', '-10', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30013', '22000', '11000', '10201', '-15', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30014', '22000', '11000', '10201', '-17', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30015', '22000', '11000', '10201', '-13', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30016', '22000', '11000', '10201', '-12', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30017', '22000', '11000', '10201', '-8', 'Damage')
+INSERT INTO tblEmployeeLoss
+VALUES ('30018', '22000', '11000', '10201', '-5', 'MissingItem')
+INSERT INTO tblEmployeeLoss
+VALUES ('30019', '22000', '11000', '10201', '-1', 'MissingItem')
+
+INSERT INTO tblEmployeeEarnings
+VALUES ('10000', '22000', '11000', '10200', '10', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10001', '22000', '11000', '10200', '8', 'Sellback')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10002', '22000', '11000', '10200', '9', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10003', '22000', '11000', '10200', '15', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10004', '22000', '11000', '10200', '13', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10005', '22000', '11000', '10200', '1', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10006', '22000', '11000', '10200', '5', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10007', '22000', '11000', '10200', '6', 'Sellback')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10008', '22000', '11000', '10200', '12', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10009', '22000', '11000', '10200', '17', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10010', '22000', '11000', '10200', '14', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10011', '22000', '11000', '10200', '1', 'Sellback')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10012', '22000', '11000', '10200', '11', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10013', '22000', '11000', '10200', '10', 'Sellback')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10014', '22000', '11000', '10200', '12', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10015', '22000', '11000', '10200', '13', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10016', '22000', '11000', '10200', '117', 'Sellback')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10017', '22000', '11000', '10200', '200', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10018', '22000', '11000', '10200', '500', 'Sale')
+INSERT INTO tblEmployeeEarnings
+VALUES ('10019', '22000', '11000', '10200', '1000', 'Sellback')
+
+INSERT INTO tblProduct
+VALUES ('200001', '10100', '20000', '10200', '11000', '173849278392', '79834178' , 'Refrigerator', '500', '5')
+INSERT INTO tblProduct
+VALUES ('200002', '10100', '20000', '10200', '11000', '173849278393', '79834178' , 'Refrigerator', '600', '5')
+INSERT INTO tblProduct
+VALUES ('200003', '10100', '20000', '10200', '11000', '173849278394', '79834178' , 'Refrigerator', '650', '5')
+INSERT INTO tblProduct
+VALUES ('200004', '10100', '20000', '10200', '11000', '173849278395', '79834178' , 'Refrigerator', '700', '5')
+INSERT INTO tblProduct
+VALUES ('200005', '10100', '20000', '10200', '11000', '173849278396', '79834178' , 'Refrigerator', '500', '5')
+INSERT INTO tblProduct
+VALUES ('200006', '10100', '20000', '10200', '11000', '173849278397', '79834178' , 'Refrigerator', '750', '5')
+INSERT INTO tblProduct
+VALUES ('200007', '10100', '20000', '10200', '11000', '173849278398', '79834178' , 'Refrigerator', '1000', '5')
+INSERT INTO tblProduct
+VALUES ('200008', '10100', '20000', '10200', '11000', '173849278399', '79834178' , 'Refrigerator', '800', '5')
+INSERT INTO tblProduct
+VALUES ('200009', '10100', '20000', '10200', '11000', '173849278400', '79834178' , 'Refrigerator', '200', '5')
+INSERT INTO tblProduct
+VALUES ('200010', '10100', '20000', '10200', '11000', '173849278401', '79834178' , 'Refrigerator', '450', '5')
+INSERT INTO tblProduct
+VALUES ('200011', '10100', '20000', '10200', '11000', '173849278402', '79834178' , 'Refrigerator', '650', '5')
+INSERT INTO tblProduct
+VALUES ('200012', '10100', '20000', '10200', '11000', '173849278403', '79834178' , 'Refrigerator', '800', '5')
+INSERT INTO tblProduct
+VALUES ('200013', '10100', '20000', '10200', '11000', '173849278404', '79834178' , 'Refrigerator', '900', '5')
+INSERT INTO tblProduct
+VALUES ('200014', '10100', '20000', '10200', '11000', '173849278405', '79834178' , 'Refrigerator', '1500', '5')
+INSERT INTO tblProduct
+VALUES ('200015', '10100', '20000', '10200', '11000', '173849278406', '79834178' , 'Refrigerator', '1200', '5')
+INSERT INTO tblProduct
+VALUES ('200016', '10100', '20000', '10200', '11000', '173849278407', '79834178' , 'Refrigerator', '1100', '5')
+INSERT INTO tblProduct
+VALUES ('200017', '10100', '20000', '10200', '11000', '173849278408', '79834178' , 'Refrigerator', '300', '5')
+INSERT INTO tblProduct
+VALUES ('200018', '10100', '20000', '10200', '11000', '173849278409', '79834178' , 'Refrigerator', '670', '5')
+INSERT INTO tblProduct
+VALUES ('200019', '10100', '20000', '10200', '11000', '173849278410', '79834178' , 'Refrigerator', '580', '5')
+INSERT INTO tblProduct
+VALUES ('200020', '10100', '20000', '10200', '11000', '173849278411', '79834178' , 'Refrigerator', '510', '5')
+
+INSERT INTO tblPick_Up_Order
+VALUES ('300000', '10200', '10/20/19 3:30pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300001', '10200', '10/20/19 3:30pm', '7', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300002', '10200', '10/20/19 3:30pm', '9', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300003', '10200', '10/20/19 3:30pm', '8', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300004', '10200', '10/20/19 3:30pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300005', '10200', '10/20/19 3:31pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300006', '10200', '10/20/19 3:31pm', '9', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300007', '10200', '10/20/19 3:32pm', '0', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300008', '10200', '10/20/19 3:32pm', '5', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300009', '10200', '10/20/19 3:32pm', '8', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300010', '10200', '10/20/19 3:37pm', '9', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300011', '10200', '10/20/19 3:38pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300012', '10200', '10/20/19 3:39pm', '7', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300013', '10200', '10/20/19 3:40pm', '6', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300014', '10200', '10/20/19 3:40pm', '5', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300015', '10200', '10/20/19 3:45pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300016', '10200', '10/20/19 3:45pm', '10', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300017', '10200', '10/20/19 3:45pm', '7', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300018', '10200', '10/20/19 3:45pm', '8', 'Denver Store')
+INSERT INTO tblPick_Up_Order
+VALUES ('300019', '10200', '10/20/19 3:45pm', '10', 'Denver Store')
+
+INSERT INTO tblOrderLineItem
+VALUES ('500000', '300000', '200001', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500001', '300000', '200013', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500002', '300000', '200009', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500003', '300000', '200007', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500004', '300000', '200002', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500005', '300000', '200006', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500006', '300000', '200011', '4')
+INSERT INTO tblOrderLineItem
+VALUES ('500007', '300000', '200014', '5')
+INSERT INTO tblOrderLineItem
+VALUES ('500008', '300001', '200010', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500009', '300001', '200011', '3')
+INSERT INTO tblOrderLineItem
+VALUES ('500010', '300001', '200006', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500011', '300001', '200005', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500012', '300002', '200013', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500013', '300002', '200014', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500014', '300003', '200015', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500015', '300003', '200017', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500016', '300003', '200008', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500017', '300003', '200007', '2')
+INSERT INTO tblOrderLineItem
+VALUES ('500018', '300004', '200001', '1')
+INSERT INTO tblOrderLineItem
+VALUES ('500019', '300004', '200006', '1')
