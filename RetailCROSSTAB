@@ -1,0 +1,39 @@
+USE storemanager
+GO
+
+--CHECK TO SEE IF TABLE EXISTS AND IF SO, DROP AND RECREATE TABLE
+IF EXISTS(SELECT 1 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_TYPE = 'BASE TABLE' 
+                 AND  TABLE_NAME = 'Crosstab')
+DROP TABLE Crosstab
+GO
+
+--CREATE TABLE FOR DEMONSTRATION PURPOSES
+
+CREATE TABLE Crosstab
+( Year      SMALLINT,
+  Quarter   TINYINT, 
+  Amount      DECIMAL(2,1) )
+GO
+INSERT INTO Crosstab VALUES (2018, 1, 1.1)
+INSERT INTO Crosstab VALUES (2018, 2, 1.2)
+INSERT INTO Crosstab VALUES (2018, 3, 1.3)
+INSERT INTO Crosstab VALUES (2018, 4, 1.4)
+INSERT INTO Crosstab VALUES (2019, 1, 2.1)
+INSERT INTO Crosstab VALUES (2019, 2, 2.2)
+INSERT INTO Crosstab VALUES (2019, 3, 2.3)
+INSERT INTO Crosstab VALUES (2019, 4, 2.4)
+GO
+
+
+--SELECT the SUM of each quarter, grouped by year:
+
+SELECT Year, 
+    SUM(CASE Quarter WHEN 1 THEN Amount ELSE 0 END) AS Q1,
+    SUM(CASE Quarter WHEN 2 THEN Amount ELSE 0 END) AS Q2,
+    SUM(CASE Quarter WHEN 3 THEN Amount ELSE 0 END) AS Q3,
+    SUM(CASE Quarter WHEN 4 THEN Amount ELSE 0 END) AS Q4
+FROM storemanager.dbo.Crosstab
+GROUP BY Year
+GO
